@@ -1,8 +1,34 @@
-//complete this code
-class Rectangle {}
 
-class Square extends Animal {}
+class Rectangle {
+  constructor(width, height) {
+    this._width = width;
+    this._height = height;
+  }
 
-// Do not change the code below this line
+  get width() {
+    return this._width;
+  }
+
+  get height() {
+    return this._height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Square extends Rectangle {
+  constructor(side) {
+    super(side, side);
+  }
+
+  getPerimeter() {
+    return this.width * 4;
+  }
+}
+
+// Make classes available to Cypress
 window.Rectangle = Rectangle;
 window.Square = Square;
+
